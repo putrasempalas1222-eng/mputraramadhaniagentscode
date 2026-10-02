@@ -2,6 +2,12 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
+  <script>
+    // Link pintas Akses Remote dari extension: /?code=KODE → remote.html?code=KODE
+    if (new URLSearchParams(location.search).has("code")) {
+      location.replace("remote.html" + location.search)
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mputraramadhani agents — AI Coding Agent for VS Code</title>
   <meta name="description" content="AI coding agent with Agent Manager, inline autocomplete, and multi-provider support for VS Code. Built by M Putra Ramadhani.">
@@ -26,6 +32,7 @@
       <a href="#install" data-i18n="nav.install">Install</a>
       <a href="#shortcuts" data-i18n="nav.shortcuts">Shortcuts</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="remote.html" data-i18n="nav.remote">Remote</a>
     </nav>
     <div class="nav-actions">
       <div class="lang-switch" id="langSwitch" role="group" aria-label="Language">

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <title>mputraramadhani agents — Remote</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e3a5f'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='14' font-weight='700' fill='%23f7f5f0' text-anchor='middle'%3Em%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="remote.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header situs -->
+    <header class="remote-top">
+      <a class="remote-brand" href="index.html">
+        <img src="logo.png" alt="" />
+        <span>mputraramadhani agents <em>Remote</em></span>
+      </a>
+      <a class="remote-back" href="index.html">&larr; Halaman unduhan</a>
+    </header>
+
+    <!-- Pairing lewat kode rahasia dari Pengaturan → Akses Remote -->
+    <section id="view-pair" class="view glass">
+      <div class="brand">
+        <div class="brand-logo">m</div>
+        <h2>Hubungkan ke Extension</h2>
+        <p class="sub">Tanpa akun — cukup kode</p>
+      </div>
+      <p class="muted">
+        Buka VS Code &rarr; <strong>Pengaturan</strong> &rarr; <strong>Akses Remote</strong>
+        &rarr; <strong>Buat Kode Baru</strong>, lalu masukkan kodenya di sini.
+      </p>
+      <input id="code-input" maxlength="6" autocomplete="off" spellcheck="false"
+             placeholder="KODE" aria-label="Kode rahasia" />
+      <button id="pair-btn" type="button" class="primary">Hubungkan</button>
+      <p id="pair-error" class="error hidden"></p>
+      <p class="muted">
+        Tidak perlu email atau kata sandi — kode rahasia adalah bukti aksesnya.
+        Sesi remote hanya bisa dilepas dari extension (Keluarkan / Hapus Kode)
+        atau dengan logout di sini.
+      </p>
+      <button id="pair-logout" type="button" class="link hidden">Keluar</button>
+    </section>
+
+    <!-- Chat remote — cermin percakapan di extension -->
+    <section id="view-chat" class="view hidden">
+      <header id="chat-header">
+        <div class="head-left">
+          <div class="brand-inline">mputraramadhani agents <span>Remote</span></div>
+          <div id="chat-account" class="muted small-text"></div>
+        </div>
+        <div class="head-right">
+          <div id="chat-model" class="muted small-text"></div>
+          <div id="chat-status" class="status offline">Extension: menunggu…</div>
+          <button id="chat-logout" type="button" class="secondary small">Keluar Remote</button>
+        </div>
+      </header>
+      <main id="messages" aria-live="polite"></main>
+      <footer id="composer">
+        <textarea id="compose" rows="1" maxlength="20000"
+                  placeholder="Ketik pesan untuk AI… (tanpa mengetik di laptop)"></textarea>
+        <button id="send-btn" type="button" class="primary" aria-label="Kirim">Kirim</button>
+      </footer>
+    </section>
+
+    <!-- Sesi diakhiri dari pihak extension -->
+    <section id="view-kicked" class="view glass hidden">
+      <h2>Sesi remote diakhiri</h2>
+      <p id="kicked-reason" class="muted"></p>
+      <button id="kicked-back" type="button" class="primary">Hubungkan Ulang</button>
+    </section>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="remote.js"></script>
+</body>
+</html>
