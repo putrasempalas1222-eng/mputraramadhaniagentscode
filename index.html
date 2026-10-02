@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPutraRamadhani Agents Code Ai — AI Coding Agent for VS Code</title>
+  <meta name="description" content="AI coding agent with Agent Manager, inline autocomplete, and multi-provider support for VS Code. Built by M Putra Ramadhani.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img class="brand-icon" src="logo.png" alt="">
+      <span class="brand-name">MPutraRamadhani Agents Code Ai</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="nav-links">
+      <a href="#downloads" data-i18n="nav.downloads">Downloads</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#install" data-i18n="nav.install">Install</a>
+      <a href="#shortcuts" data-i18n="nav.shortcuts">Shortcuts</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language">
+        <button class="lang-btn is-active" data-lang="id" type="button">ID</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a class="btn btn-sm btn-accent" href="#downloads" data-i18n="nav.cta">Download</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero.badge">VS Code Extension</span>
+        </div>
+        <h1 class="hero-title fade-up" data-i18n-html="hero.title">Your AI coding<br><span>agent</span> for VS Code</h1>
+        <p class="hero-desc fade-up" data-i18n="hero.desc">Agent Manager, parallel worktrees, inline autocomplete, dan dukungan penuh untuk semua model AI melalui proxy lokal.</p>
+        <div class="hero-actions fade-up">
+          <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=MPUTRARAMADHANI.m-putra-ramadhani-agents-code-ai" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="hero.marketplace">Get on Marketplace</span>
+          </a>
+          <button class="btn btn-ghost" data-open-browser="" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span data-i18n="hero.browser">Buka di Browser</span>
+          </button>
+        </div>
+        <div class="hero-meta fade-up">
+          <span class="meta-chip"><strong>v1.0.132</strong></span>
+          <span class="meta-chip">mputraramadhani</span>
+          <span class="meta-chip">MIT</span>
+          <span class="meta-chip">VS Code 1.105+</span>
+        </div>
+      </div>
+      <div class="hero-card fade-up">
+        <div class="preview-window">
+          <div class="preview-titlebar">
+            <span class="preview-dot r"></span>
+            <span class="preview-dot y"></span>
+            <span class="preview-dot g"></span>
+            <span class="preview-title">MPutraRamadhani Agents Code Ai</span>
+          </div>
+          <div class="preview-body">
+            <div class="preview-sidebar">
+              <div class="sidebar-item active">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                Chat
+              </div>
+              <div class="sidebar-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/><circle cx="21" cy="5" r="1.5"/><circle cx="21" cy="12" r="1.5"/><circle cx="21" cy="19" r="1.5"/></svg>
+                Agent Manager
+              </div>
+              <div class="sidebar-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                History
+              </div>
+              <div class="sidebar-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 0 22 12"/></svg>
+                Settings
+              </div>
+            </div>
+            <div class="preview-main">
+              <div class="preview-msg user">Build landing page based on attached docs</div>
+              <div class="preview-msg agent">
+                <span class="agent-label">MPutraRamadhani Agents Code Ai</span>
+                I'll analyze the docs and build a professional landing page. Let me plan this out first.
+              </div>
+              <div class="preview-msg agent">
+                <span class="agent-label">Agent Manager</span>
+                [🟢 Agent-1] Working · branch: feat/landing-page · <span class="agent-time">2m ago</span>
+              </div>
+              <div class="preview-input">
+                <span class="input-prompt">➜</span>
+                <span class="input-cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="container">
+    <p class="logos-label" data-i18n="logos.label">Powered by Deep Putra models</p>
+    <div class="logos-grid">
+      <div class="logo-chip">Deep Putra 2 Flash</div>
+      <div class="logo-chip">Deep Putra 3 Flash</div>
+      <div class="logo-chip">Deep Putra 3 Pro</div>
+      <div class="logo-chip">Deep Putra 5 Flash</div>
+      <div class="logo-chip">Deep Putra 6 Default</div>
+      <div class="logo-chip">Deep Putra 6 Pro</div>
+      <div class="logo-chip">Deep Putra 6 ProMax</div>
+      <div class="logo-chip">Deep Putra 7 Basic</div>
+      <div class="logo-chip">Deep Putra 7 Medium</div>
+      <div class="logo-chip">Deep Putra 7 Pro</div>
+      <div class="logo-chip">Deep Putra 7 ProMax</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section class="section" id="downloads">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="dl.label">Downloads</span>
+      <h2 data-i18n="dl.title">Extension Files</h2>
+      <p data-i18n="dl.sub">Pick a version and install directly into VS Code.</p>
+    </div>
+    <div class="downloads">
+
+      <div class="download-card latest fade-up">
+        <div class="download-card-left">
+          <img class="dl-icon" src="logo.png" alt="">
+          <div>
+            <div class="dl-name">MPutraRamadhani Agents Code Ai</div>
+            <div class="dl-desc" data-i18n="dl.descLatest">AI coding agent with Agent Manager, autocomplete, and multi-provider support</div>
+          </div>
+        </div>
+        <div class="download-card-right">
+          <div class="dl-meta">
+            <span><strong>1.0.132</strong> &middot; 148 MB &middot; 2026-10-02</span>
+          </div>
+          <a class="btn btn-primary btn-sm" href="https://marketplace.visualstudio.com/items?itemName=MPUTRARAMADHANI.m-putra-ramadhani-agents-code-ai" target="_blank" rel="noopener">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="dl.btn">Download</span>
+          </a>
+          <span class="latest-tag" data-i18n="dl.latest">LATEST</span>
+        </div>
+      </div>
+
+      <div class="download-card fade-up">
+        <div class="download-card-left">
+          <img class="dl-icon" src="logo.png" alt="">
+          <div>
+            <div class="dl-name">MPutraRamadhani Agents Code Ai</div>
+            <div class="dl-desc" data-i18n="dl.prev">v1.0.116 &mdash; Previous stable release</div>
+          </div>
+        </div>
+        <div class="download-card-right">
+          <div class="dl-meta"><span>1.0.116 &middot; 148 MB &middot; 2026-10-01</span></div>
+          <span class="dl-status" data-i18n="dl.archived">Archived</span>
+        </div>
+      </div>
+
+      <div class="download-card fade-up">
+        <div class="download-card-left">
+          <img class="dl-icon" src="logo.png" alt="">
+          <div>
+            <div class="dl-name">MPutraRamadhani Agents Code Ai</div>
+            <div class="dl-desc" data-i18n="dl.legacy">v1.0.115 &mdash; Legacy build</div>
+          </div>
+        </div>
+        <div class="download-card-right">
+          <div class="dl-meta"><span>1.0.115 &middot; 148 MB &middot; 2026-10-01</span></div>
+          <span class="dl-status" data-i18n="dl.archived">Archived</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section bg-alt" id="features">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="feat.label">Features</span>
+      <h2 data-i18n="feat.title">What it does</h2>
+      <p data-i18n="feat.sub">Everything you need to ship code faster with AI assistance.</p>
+    </div>
+    <div class="features">
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/><circle cx="21" cy="5" r="1.5"/><circle cx="21" cy="12" r="1.5"/><circle cx="21" cy="19" r="1.5"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.manager">Agent Manager</h3>
+          <p data-i18n="feat.managerDesc">Run multiple AI agents in parallel across isolated Git worktrees. Each session gets its own branch and task assignment.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.autocomplete">Inline Autocomplete</h3>
+          <p data-i18n="feat.autocompleteDesc">Next-edit predictions with jump-to-edit UX. Press Tab to accept suggested changes directly in your code.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.terminal">Terminal Integration</h3>
+          <p data-i18n="feat.terminalDesc">Explain, fix, or add terminal output to context right from the editor. AI understands your build errors live.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.multi">Multi-Provider</h3>
+          <p data-i18n="feat.multiDesc">Connect to Anthropic, OpenAI, DeepSeek, Qwen, GLM, MiniMax, Kimi, and many more through a single unified proxy.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.catalog">Custom Model Catalog</h3>
+          <p data-i18n="feat.catalogDesc">Admin dashboard to manage providers, models, pricing, and per-model token overhead without touching code.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 0 22 12"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.reasoning">Reasoning Control</h3>
+          <p data-i18n="feat.reasoningDesc">Cycle reasoning effort levels with Ctrl+.. Switch between fast and deep thinking per session on the fly.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.memory">Project Memory</h3>
+          <p data-i18n="feat.memoryDesc">Persistent context across sessions. The agent learns your project structure, conventions, and decisions.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="feat.browser">Browser Automation</h3>
+          <p data-i18n="feat.browserDesc">Experimental Playwright-based browser panel. Let the agent interact with web pages for testing and research.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="section" id="install">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="install.label">Installation</span>
+      <h2 data-i18n="install.title">Get started in 4 steps</h2>
+      <p data-i18n="install.sub">Install the extension and start coding with AI in minutes.</p>
+    </div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3 data-i18n="install.s1">Download the VSIX file</h3>
+          <p data-i18n="install.s1Desc">Pick a version above and click Download. The file is self-contained — no internet required after download.</p>
+        </div>
+      </div>
+
+      <div class="step fade-up">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3 data-i18n="install.s2">Install via command line</h3>
+          <p data-i18n="install.s2Desc">Open a terminal in VS Code and run:</p>
+          <div class="code-wrap">
+            <code>code --install-extension mputraramadhani-agents-1.0.132.vsix</code>
+            <button class="copy-btn" type="button" data-i18n="copy">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="step fade-up">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3 data-i18n="install.s3">Reload VS Code</h3>
+          <p data-i18n="install.s3Desc">Press <kbd>Ctrl+Shift+P</kbd>, type <code>Reload Window</code>, and hit Enter. The Agent panel will appear in the sidebar.</p>
+        </div>
+      </div>
+
+      <div class="step fade-up">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3 data-i18n="install.s4">Configure your provider</h3>
+          <p data-i18n="install.s4Desc">Open Settings, search for <code>Agents Code</code>, and set your default provider and model.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SHORTCUTS -->
+<section class="section bg-alt" id="shortcuts">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="short.label">Reference</span>
+      <h2 data-i18n="short.title">Keyboard Shortcuts</h2>
+      <p data-i18n="short.sub">Master these shortcuts to work faster with MPutraRamadhani Agents Code Ai.</p>
+    </div>
+    <div class="shortcuts-table-wrap fade-up">
+      <table class="shortcuts-table">
+        <thead><tr><th data-i18n="short.th1">Shortcut</th><th data-i18n="short.th2">Action</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>Ctrl+Shift+A</kbd></td><td data-i18n="short.r1">Focus chat input</td></tr>
+          <tr><td><kbd>Ctrl+Shift+M</kbd></td><td data-i18n="short.r2">Open Agent Manager</td></tr>
+          <tr><td><kbd>Ctrl+Alt+A</kbd></td><td data-i18n="short.r3">Toggle auto-approve</td></tr>
+          <tr><td><kbd>Ctrl+Shift+G</kbd></td><td data-i18n="short.r4">Generate terminal command</td></tr>
+          <tr><td><kbd>Ctrl+L</kbd></td><td data-i18n="short.r5">Trigger inline autocomplete</td></tr>
+          <tr><td><kbd>Tab</kbd></td><td data-i18n="short.r6">Accept next edit suggestion</td></tr>
+          <tr><td><kbd>Escape</kbd></td><td data-i18n="short.r7">Dismiss suggestion / close panel</td></tr>
+          <tr><td><kbd>Ctrl+.</kbd></td><td data-i18n="short.r8">Cycle reasoning effort level</td></tr>
+          <tr><td><kbd>Ctrl+1</kbd>–<kbd>9</kbd></td><td data-i18n="short.r9">Jump to agent session 1–9</td></tr>
+          <tr><td><kbd>Ctrl+N</kbd></td><td data-i18n="short.r10">New Agent Manager worktree</td></tr>
+          <tr><td><kbd>Ctrl+Shift+N</kbd></td><td data-i18n="short.r11">Quick new worktree</td></tr>
+          <tr><td><kbd>Ctrl+D</kbd></td><td data-i18n="short.r12">Toggle diff panel</td></tr>
+          <tr><td><kbd>Ctrl+F</kbd></td><td data-i18n="short.r13">Search in Agent Manager</td></tr>
+          <tr><td><kbd>Ctrl+Shift+R</kbd></td><td data-i18n="short.r14">Open pull request</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label" data-i18n="faq.label">FAQ</span>
+      <h2 data-i18n="faq.title">Common questions</h2>
+      <p data-i18n="faq.sub">Quick answers to help you get started.</p>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <h3 data-i18n="faq.q1">Is this extension free?</h3>
+        <p data-i18n="faq.a1">Yes. The extension is open-source under MIT. Some AI providers may have their own usage costs — check each provider's pricing page.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-i18n="faq.q2">Do I need an API key?</h3>
+        <p data-i18n="faq.a2">At least one provider key is required to use chat or autocomplete features. Add it through the extension settings or the admin dashboard.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-i18n="faq.q3">Can I use my own local models?</h3>
+        <p data-i18n="faq.a3">Yes. Any OpenAI-compatible endpoint works. Add your provider in the admin dashboard and the model appears automatically.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-i18n="faq.q4">How do Agent Manager worktrees work?</h3>
+        <p data-i18n="faq.a4">Each agent session gets its own isolated Git worktree (a parallel checkout). Changes commit to separate branches so they never conflict.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-i18n="faq.q5">Where is my data stored?</h3>
+        <p data-i18n="faq.a5">Sessions and history live locally in <code>~/.config/agents-code-ai/</code>. Firebase is used only for admin management — not for conversation content.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="logo.png" alt="">
+      <div>
+        <div class="footer-brand">MPutraRamadhani Agents Code Ai</div>
+        <div class="footer-copy" data-i18n="footer.copy">&copy; 2026 M Putra Ramadhani · MIT License</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="https://marketplace.visualstudio.com/items?itemName=MPUTRARAMADHANI.m-putra-ramadhani-agents-code-ai" target="_blank" rel="noopener">VS Marketplace</a>
+    </div>
+  </div>
+</footer>
+
+<a href="#top" class="back-top" id="backToTop" aria-label="Back to top">
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
+
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
