@@ -186,6 +186,7 @@ document.documentElement.classList.add('js')
 ;(function () {
   var dict = {
     id: {
+      'nav.about': 'Tentang',
       'nav.downloads': 'Unduhan',
       'nav.features': 'Fitur',
       'nav.install': 'Instalasi',
@@ -242,6 +243,14 @@ document.documentElement.classList.add('js')
       'short.label': 'Referensi',
       'short.title': 'Pintasan Keyboard',
       'short.sub': 'Kuasai pintasan ini untuk bekerja lebih cepat dengan mputraramadhani agents.',
+      'about.label': 'Perusahaan',
+      'about.title': 'Ramadhani AI Labs',
+      'about.sub': 'Startup teknologi independen yang berfokus pada alat pengembang dan infrastruktur AI yang praktis.',
+      'about.productLabel': 'Produk',
+      'about.productDesc': 'Produk developer kami menghadirkan agen AI, bantuan coding, routing model, dan alur kerja pengembangan dalam VS Code.',
+      'about.focusLabel': 'Fokus',
+      'about.focusTitle': 'Infrastruktur developer AI',
+      'about.focusDesc': 'Kami membangun perangkat lunak yang membantu developer menghubungkan model AI dengan alur kerja pengembangan nyata, dengan fokus pada fleksibilitas dan penggunaan praktis.',
       'short.th1': 'Pintasan',
       'short.th2': 'Tindakan',
       'short.r1': 'Fokus input chat',
@@ -271,7 +280,7 @@ document.documentElement.classList.add('js')
       'faq.a4': 'Tiap sesi agen mendapat worktree Git terisolasi (checkout paralel). Perubahan di-commit ke cabang terpisah sehingga tidak pernah konflik.',
       'faq.q5': 'Di mana data saya disimpan?',
       'faq.a5': 'Sesi dan riwayat tersimpan lokal di <code>~/.config/agents-code-ai/</code>. Firebase hanya untuk admin — bukan isi percakapan.',
-      'footer.copy': '© 2026 M Putra Ramadhani · Lisensi MIT'
+      'footer.copy': '© 2026 Ramadhani AI Labs · Produk: mputraramadhani agents · Lisensi MIT'
     },
     en: {
       'nav.downloads': 'Downloads',
@@ -330,6 +339,14 @@ document.documentElement.classList.add('js')
       'short.label': 'Reference',
       'short.title': 'Keyboard Shortcuts',
       'short.sub': 'Master these shortcuts to work faster with mputraramadhani agents.',
+      'about.label': 'Company',
+      'about.title': 'Ramadhani AI Labs',
+      'about.sub': 'An independent technology startup focused on practical AI developer tools and infrastructure.',
+      'about.productLabel': 'Product',
+      'about.productDesc': 'Our developer product brings AI agents, coding assistance, model routing, and developer workflows together inside VS Code.',
+      'about.focusLabel': 'Focus',
+      'about.focusTitle': 'AI developer infrastructure',
+      'about.focusDesc': 'We build software that helps developers connect AI models to real development workflows with a focus on flexibility and practical use.',
       'short.th1': 'Shortcut',
       'short.th2': 'Action',
       'short.r1': 'Focus chat input',
@@ -359,7 +376,7 @@ document.documentElement.classList.add('js')
       'faq.a4': 'Each agent session gets its own isolated Git worktree (a parallel checkout). Changes commit to separate branches so they never conflict.',
       'faq.q5': 'Where is my data stored?',
       'faq.a5': 'Sessions and history live locally in <code>~/.config/agents-code-ai/</code>. Firebase is used only for admin management — not for conversation content.',
-      'footer.copy': '© 2026 M Putra Ramadhani · MIT License'
+      'footer.copy': '© 2026 Ramadhani AI Labs · Product: mputraramadhani agents · MIT License'
     }
   }
 
